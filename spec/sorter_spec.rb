@@ -3,30 +3,27 @@ require '../lib/sorter.rb'
 
 describe "Sorter" do
 
-  it "should create a new Sorter node with the correct value" do
+  it "should create a new sorter node with all instance variables set to nil"   do
+    sorter=Sorter.new
+    sorter.less_than.should == nil
+    sorter.value.should == nil
+    sorter.greater_or_equal.should == nil
+  end
+
+  it "should add a first value to a Sorter correctly" do
     sorter=Sorter.new
     sorter.add(3)
     sorter.value.should == 3
+    sorter=Sorter.new
     sorter.add(4)
     sorter.value.should == 4
-  end
-
-  it "should start with a nil value"  do
-    sorter=Sorter.new
-    sorter.value.should == nil
-  end
-
-  it "should create a new sorter node with nil less_than and greater_or_equal references"   do
-    sorter=Sorter.new
-    sorter.less_than.should == nil
-    sorter.greater_or_equal.should == nil
   end
 
   it "should add a number less than what is in the node" do
     sorter = Sorter.new
     sorter.add(33)
     sorter.add(22)
-    sorter.less_than.value.should == 22
+    (sorter.less_than).value.should == 22
   end
 
 
