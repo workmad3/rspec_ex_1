@@ -26,6 +26,13 @@ describe "Sorter" do
     (sorter.less_than).value.should == 22
   end
 
+    it "should add a number greater than what is in the node" do
+    sorter = Sorter.new
+    sorter.add(33)
+    sorter.add(44)
+    (sorter.greater_or_equal_than).value.should == 44
+  end
+
 
 
   it "should be able to sort two numbers" do
