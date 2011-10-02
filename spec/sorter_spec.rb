@@ -19,7 +19,7 @@ describe "Sorter" do
     sorter.value.should == 4
   end
 
-  it "should add a number less than what is in the node" do
+  it "should add a second number less than the number that is already in the Sorter" do
     sorter = Sorter.new
     sorter.add(33)
     sorter.add(22)
@@ -28,21 +28,21 @@ describe "Sorter" do
     (sorter.less_than).less_than.value.should == 11
   end
 
-  it "should add a number equal to what is in the node" do
+  it "should add a second number equal to the number that is already in the Sorter" do
     sorter = Sorter.new
     sorter.add(223)
     sorter.add(223)
     (sorter.greater_or_equal_than).value.should == 223
   end
 
-  it "should add a number greater than what is in the node" do
+  it "should add a second number greater than the number which is already in the Sorter" do
     sorter = Sorter.new
     sorter.add(33)
     sorter.add(44)
     (sorter.greater_or_equal_than).value.should == 44
   end
 
-  it "should be able to add more than two numbers" do
+  it "should add a third number correctly" do
     sorter = Sorter.new
     sorter.add(33)
     sorter.add(22)
